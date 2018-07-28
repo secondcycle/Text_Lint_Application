@@ -1,0 +1,58 @@
+Folder structure of the code, inputs and outputs
+
+/text_lint {Python based}
+
+ 	Main python files
+
+ 	/Python_Code
+
+	   /CopyLeaks
+	   	   - class based 
+
+	   /Grammarly
+           - class based  
+
+	   /common
+	       /Graphical report generation 
+	       - Class based common methods
+
+	/Input
+	 	text files
+	
+	/Output
+	
+	    /Graphical output information per input text file
+	    
+	    /TemporaryFiles
+	    
+	    /OutputFiles
+	       /Grammarly
+	       
+		   /CopyLeaks
+
+========================================================================================================
+
+CopyLeaks: FITZ : 
+
+Cfg files 
+
+1. fitz --> python based API for pdf, text file manipulations
+2. Copyleaks api --> Constraint on maximum size of pdf file
+3. Circumvent by checking for plagiarism per page
+4. Use multiprocessing for faster processing
+5. Log the results per page
+6. Graphical visualization of results
+
+Grammarly: 
+
+Cfg files 
+
+1. maximum number of characters 
+2. grammarly --> python based API for pdf, text file manipulations 
+3. grammarly api 
+4. Use multiprocessing for faster processing
+5. Highlight error and corresponding suggestions.
+6. Log the results per page.
+7. Graphical visualization of results.
+
+"Easy to run bash script"
