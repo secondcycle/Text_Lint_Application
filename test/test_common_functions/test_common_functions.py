@@ -17,7 +17,7 @@ try:
 
 	# import section
 	from common_globals   import gPYTHON_VERSION as gPYTHON_VERSION
-	from common_functions import printErrorFunc as printErrorFunc
+	from common_functions import *
 	
 	import inspect
 	from collections import OrderedDict
@@ -44,6 +44,28 @@ def testPrintErrorFunc():
 	printErrorFunc(inputErrorString=inputErrorString, callingFuncInfoTuple=callingFuncInfoTuple, numOfElements=2)
 	return
 
+def testAppendStringsInAListFunc():
+	inputStrList = ["a","bbbb","Cccccc"]
+	delimiterStr = "-"
+	retString    = appendStringsInAListFunc(inputList=inputStrList, delimiterStr=delimiterStr)
+	print(" retString = {}  ".format(retString))
+	return
+
+def testFindCharPositionOfMatchingCharFunc():
+	text = "ab\n\n\n\n\n\naaa\n"
+	retList = findCharPositionOfMatchingCharFunc(inputText=text, charToBeMatched='\n')
+	print(" I/P text = {}  O/P retList = {} ".format(text, retList))
+	return
+
+def testFiltersNewLineTextFunc():
+	text = "ab\nsdfdsfdsfsdf\nn"
+	retList = filtersNewLineTextFunc(inputTextList=[text])
+	print(" I/P text = {}  O/P text = {} ".format( text, retList[0]))
+	return
+
 if __name__=='__main__':
-	
-	testPrintErrorFunc()
+
+	#testPrintErrorFunc()
+	testAppendStringsInAListFunc()
+	testFindCharPositionOfMatchingCharFunc()
+	testFiltersNewLineTextFunc()

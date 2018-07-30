@@ -1,0 +1,1 @@
+./Essentials_Linux/essential_scripts/plagiarism_checker/Text_Lint_Application/output/

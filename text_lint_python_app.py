@@ -11,13 +11,10 @@
 # 
 # @Outputs: 
 # 
-# 
-# 
-# @Usage  : text_lint_python_app.py text_lint_python_app.py  --name_of_test_run "testRun0" --input_text_files_path_file "inputTextPathFile.txt" --cfg_text_files_path_file "cfg_file_options" 
-# 			--output_pdf_files_path_file "outputTextPathFile.txt" --report_pdf_folder_path "../Text_Lint_Application/final_reports/"   
-# 
-# 
-# 
+#
+# @Usage  : text_lint_python_app.py  --name_of_test_run "testRun0" --input_text_files_folder_path_file "inputTextFolderPathFile.txt" 
+#                                    --cfg_text_files_path_file "cfgFileOptions" --output_pdf_files_folder_path_file "outputTextFolderPathFile.txt" 
+#                                    --report_pdf_folder_path "../Text_Lint_Application/final_reports/"
 #####################################################################
 
 # Usual header for checking python version
@@ -43,12 +40,24 @@ except:
 		sys.exit()
 
 
+# returns input argument dict
+def parseAndGetInputArgumentsDict():
 
-def 
+	parser = argparse.ArgumentParser(description='Process input arguments ')
+
+	parser.add_argument('--name_of_test_run', metavar='N', type=str, nargs='+', 			      default="testRun0", help='name of the test run')
+
+	parser.add_argument('--input_text_files_folder_path_file', metavar='N', type=str, nargs='+',  default="../Text_Lint_Application/input/inputTextFolderPathFile.txt", help='input_text_files_path_file')
+
+	parser.add_argument('--cfg_text_files_path_file', metavar='N', type=str, nargs='+', 	      default="All", help='cfgFileOptions')
 	
+	parser.add_argument('--output_pdf_files_folder_path_file', metavar='N', type=str, nargs='+',  default="../Text_Lint_Application/output/outputTextFolderPathFile.txt", help='output_pdf_files_folder_path_file')
 
+	parser.add_argument('--report_pdf_folder_path', metavar='N', type=str, nargs='+', 		      default="../Text_Lint_Application/final_reports/", help='report_pdf_folder_path')		
 
+	argsDict = vars(parser.parse_args())
 
+	return argsDict
 
 
 # main 
@@ -56,4 +65,6 @@ if __name__=='__main__':
 
 	print(" In main \n ")
 
+	inputArgumentDict = parseAndGetInputArgumentsDict()
 
+	print(" Input argument dict = {} ".format(inputArgumentDict))
